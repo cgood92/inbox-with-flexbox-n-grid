@@ -1,13 +1,12 @@
 import React from "react";
-import { css } from "emotion";
 import classnames from "classnames";
 import "./Box.css";
 
 const sizeMap = {
   icon: {
     width: 40,
-    height: 40
-  }
+    height: 40,
+  },
 };
 
 const Box = ({
@@ -28,7 +27,7 @@ const Box = ({
     // Put on outlines if wanted
     black && "black-outline",
     gray && "gray-outline",
-    thick && "thick"
+    thick && "thick",
   ]
     // Pull out falses
     .filter(s => s)
@@ -36,7 +35,7 @@ const Box = ({
   const size = {
     ...sizeMap[[icon && "icon"].find(s => s)],
     ...(width && { width }),
-    ...(height && { height })
+    ...(height && { height }),
   };
   return (
     <div className={classnames(styles, className)} {...props} style={size} />
@@ -44,7 +43,7 @@ const Box = ({
 };
 
 Box.defaultProps = {
-  icon: true
+  icon: true,
 };
 
 export default Box;
