@@ -1,0 +1,11 @@
+.gray-outline {
+  border: 1px solid gray;
+}
+
+.black-outline {
+  border: 1px solid black;
+}
+
+.thick {
+  border-width: 3px;
+}
