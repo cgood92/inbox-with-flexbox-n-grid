@@ -1,4 +1,6 @@
 import React from "react";
+import { css } from "emotion";
+import classnames from "classnames";
 import "./Box.css";
 
 const sizeMap = {
@@ -8,11 +10,21 @@ const sizeMap = {
   }
 };
 
-const Box = ({ height, width, black, gray, thick, icon, ...props }) => {
+const Box = ({
+  height,
+  width,
+  black,
+  gray,
+  thick,
+  noBorder,
+  icon,
+  className,
+  ...props
+}) => {
   const styles = [
     "box",
     // Default border color if not specified
-    !black && !gray && "gray-outline",
+    !black && !gray && !noBorder && "gray-outline",
     // Put on outlines if wanted
     black && "black-outline",
     gray && "gray-outline",
@@ -26,7 +38,9 @@ const Box = ({ height, width, black, gray, thick, icon, ...props }) => {
     ...(width && { width }),
     ...(height && { height })
   };
-  return <div className={styles} {...props} style={size} />;
+  return (
+    <div className={classnames(styles, className)} {...props} style={size} />
+  );
 };
 
 Box.defaultProps = {
