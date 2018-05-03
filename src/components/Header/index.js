@@ -8,6 +8,7 @@ const headerStyles = css({
   display: "flex",
   alignItems: "center",
   flexWrap: "wrap",
+  gridArea: "header",
 });
 
 const searchContainerStyles = css({

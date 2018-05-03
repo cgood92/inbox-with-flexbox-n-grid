@@ -1,12 +1,55 @@
 import React, { Component } from "react";
+import { css } from "emotion";
+import mq from "./util/mq";
 import Header from "./components/Header";
+import Main from "./components/Main";
+import LeftSidebar from "./components/LeftSidebar";
+import RightSidebar from "./components/RightSidebar";
+
+const appStyles = css({
+  height: "100vh",
+  display: "grid",
+  gridTemplateColumns: "100%",
+  gridTemplateRows: "auto 1fr",
+  gridTemplateAreas: `
+    "header"
+    "main"
+    "sidebarLeft"
+    "sidebarRight"
+  `,
+  ...mq.medium({
+    gridTemplateColumns: "200px 1fr 200px",
+    gridTemplateRows: "auto 1fr",
+    gridTemplateAreas: `
+    "header header header"
+    "sidebarLeft main sidebarRight"
+  `,
+  }),
+  "& > header": {
+    gridArea: "header",
+  },
+  "& > aside:first-of-type": {
+    gridArea: "sidebarLeft",
+  },
+  "& > main": {
+    gridArea: "main",
+  },
+  "& > aside:last-of-type": {
+    gridArea: "sidebarRight",
+  },
+  "& > *": {
+    border: "1px solid gray",
+  },
+});
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className={appStyles}>
         <Header />
-        <main />
+        <LeftSidebar />
+        <Main />
+        <RightSidebar />
       </div>
     );
   }
