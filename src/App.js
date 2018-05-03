@@ -8,6 +8,7 @@ import RightSidebar from "./components/RightSidebar";
 
 const appStyles = css({
   height: "100vh",
+  overflow: "hidden",
   display: "grid",
   gridTemplateColumns: "100%",
   gridTemplateRows: "auto 1fr",
@@ -39,6 +40,9 @@ const appStyles = css({
   },
   "& > *": {
     border: "1px solid gray",
+  },
+  "& > aside": {
+    overflow: "auto",
   },
 });
 

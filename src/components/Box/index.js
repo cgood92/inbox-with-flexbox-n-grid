@@ -7,6 +7,10 @@ const sizeMap = {
     width: 40,
     height: 40,
   },
+  tile: {
+    width: "100%",
+    height: 40,
+  },
 };
 
 const Box = ({
@@ -17,6 +21,7 @@ const Box = ({
   thick,
   noBorder,
   icon,
+  tile,
   className,
   ...props
 }) => {
@@ -33,17 +38,13 @@ const Box = ({
     .filter(s => s)
     .join(" ");
   const size = {
-    ...sizeMap[[icon && "icon"].find(s => s)],
+    ...sizeMap[[icon && "icon", tile && "tile"].find(s => s)],
     ...(width && { width }),
     ...(height && { height }),
   };
   return (
     <div className={classnames(styles, className)} {...props} style={size} />
   );
-};
-
-Box.defaultProps = {
-  icon: true,
 };
 
 export default Box;

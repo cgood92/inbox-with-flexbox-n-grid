@@ -8,3 +8,9 @@ body {
   background-color: #397af2;
   color: white;
 }
+
+hr {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #d6d3d3;
+}
