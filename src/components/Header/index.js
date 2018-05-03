@@ -36,8 +36,8 @@ const Header = () => (
     <Box icon black>
       Inbox
     </Box>
-    <Box height={50} className={searchContainerStyles} noBorder>
-      <Box black width="100%" className={searchStyles}>
+    <Box height={60} className={searchContainerStyles} noBorder>
+      <Box black width="100%" className={searchStyles} height={50}>
         <Box icon black className={css({ marginRight: 20 })} />
         Search
       </Box>
