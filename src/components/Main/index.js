@@ -9,18 +9,13 @@ const mainStyles = css({
   minWidth: 0,
 });
 
-const emailStyles = css({
-  backgroundColor: "white",
-  margin: "0 auto",
-});
-
 const header = css({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   padding: "8px 16px",
   position: "sticky",
-  top: 0,
+  top: 102,
   backgroundColor: "white",
 });
 

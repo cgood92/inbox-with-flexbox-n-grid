@@ -27,6 +27,9 @@ const appStyles = css({
   }),
   "& > header": {
     gridArea: "header",
+    position: "sticky",
+    width: "100%",
+    top: 0,
   },
   "& > aside:first-of-type": {
     gridArea: "sidebarLeft",
@@ -41,7 +44,22 @@ const appStyles = css({
     border: "1px solid gray",
   },
   "& > aside": {
-    // overflow: "auto",
+    overflow: "auto",
+    height: 50,
+    ...mq.medium({
+      overflow: "visible",
+    }),
+    position: "relative",
+    "&:before": {
+      content: '""',
+      width: "100%",
+      height: "100%",
+      backgroundColor: "blue",
+      top: 0,
+      left: 0,
+      position: "absolute",
+      zIndex: 10,
+    },
   },
 });
 
