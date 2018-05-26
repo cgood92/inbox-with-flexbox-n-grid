@@ -45,7 +45,6 @@ const appStyles = css({
   },
   "& > aside": {
     overflow: "auto",
-    height: 50,
     ...mq.medium({
       overflow: "visible",
       "&:before": {
