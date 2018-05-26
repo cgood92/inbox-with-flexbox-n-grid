@@ -51,17 +51,6 @@ const appStyles = css({
         display: "none",
       },
     }),
-    position: "relative",
-    "&:before": {
-      content: '""',
-      width: "100%",
-      height: "100%",
-      backgroundColor: "blue",
-      top: 0,
-      left: 0,
-      position: "absolute",
-      zIndex: 10,
-    },
   },
 });
 

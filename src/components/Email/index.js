@@ -1,6 +1,8 @@
 import React from "react";
 import { css } from "emotion";
 import lorem from "lorem-ipsum";
+import Avatar from "../avatar";
+import Icon from "@material-ui/core/Icon";
 import Box from "../Box";
 
 const emailStyles = css({
@@ -40,7 +42,7 @@ const getPreviewConfig = () => ({
 
 const Email = () => (
   <Box className={emailStyles} tile black height="auto">
-    <Box icon className="icon" />
+    <Avatar />
     <span className="from">{lorem(getFromConfig())}</span>
     <span className="preview">{lorem(getPreviewConfig())}</span>
   </Box>

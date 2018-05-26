@@ -1,6 +1,10 @@
 import React from "react";
 import { css } from "emotion";
 import classnames from "classnames";
+import Icon from "@material-ui/core/Icon";
+import TextField from "@material-ui/core/TextField";
+import Avatar from "../avatar";
+import Switch from "@material-ui/core/Switch";
 import Box from "../Box";
 import mq from "../../util/mq";
 
@@ -10,6 +14,8 @@ const headerStyles = css({
   flexWrap: "wrap",
   gridArea: "header",
   zIndex: 100,
+  backgroundColor: "#4285f4",
+  padding: "0 16px 0 8px",
 });
 
 const searchContainerStyles = css({
@@ -29,25 +35,33 @@ const searchStyles = css({
   maxWidth: 800,
   display: "flex",
   alignItems: "center",
+  background: "rgba(255,255,255,.25)",
+  color: "white !important",
 });
 
 const Header = () => (
   <header className={classnames("blue", headerStyles)}>
-    <Box icon black />
-    <Box icon black>
-      Inbox
-    </Box>
+    <Icon>menu</Icon>
+    <span>Inbox</span>
     <Box height={60} className={searchContainerStyles} noBorder>
-      <Box black width="100%" className={searchStyles} height={50}>
-        <Box icon black className={css({ marginRight: 20 })} />
-        Search
+      <Box width="100%" className={searchStyles} height={50} noBorder>
+        <Icon className={css({ marginRight: 20 })}>search</Icon>
+        <TextField
+          InputLabelProps={{
+            shrink: true,
+          }}
+          placeholder="Search"
+          fullWidth
+          disableUnderline
+          margin="normal"
+        />
       </Box>
-      <Box icon black />
+      <Switch checked color="primary" />
     </Box>
-    <Box icon black className={css({ marginLeft: "auto" })} />
-    <Box icon black />
-    <Box icon black />
-    <Box icon black />
+    <Icon className={css({ marginLeft: "auto" })}>chat</Icon>
+    <Icon>grid_on</Icon>
+    <Icon>notifications</Icon>
+    <Avatar />
   </header>
 );
 

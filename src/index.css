@@ -18,3 +18,7 @@ hr {
   border-style: solid;
   border-color: #d6d3d3;
 }
+
+.material-icons {
+  margin: 8px;
+}

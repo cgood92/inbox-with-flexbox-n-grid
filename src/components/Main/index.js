@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { css } from "emotion";
+import Icon from "@material-ui/core/Icon";
 import Email from "../Email";
-import Box from "../Box";
 import mq from "../../util/mq";
 
 const mainStyles = css({
@@ -19,6 +19,7 @@ const header = css({
   alignItems: "center",
   padding: "8px 16px",
   position: "sticky",
+  zIndex: 10,
   top: 102,
   backgroundColor: "white",
 });
@@ -31,7 +32,7 @@ const MainSidebar = () => (
       <Fragment>
         <div className={header}>
           <span>{dates[i]}</span>
-          <Box icon />
+          <Icon>done_all</Icon>
         </div>
         {new Array(7).fill(0).map((e, ii) => <Email key={`${i}${ii}`} />)}
       </Fragment>
