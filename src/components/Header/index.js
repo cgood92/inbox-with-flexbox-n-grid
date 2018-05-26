@@ -9,6 +9,7 @@ const headerStyles = css({
   alignItems: "center",
   flexWrap: "wrap",
   gridArea: "header",
+  zIndex: 100,
 });
 
 const searchContainerStyles = css({

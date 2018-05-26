@@ -48,6 +48,9 @@ const appStyles = css({
     height: 50,
     ...mq.medium({
       overflow: "visible",
+      "&:before": {
+        display: "none",
+      },
     }),
     position: "relative",
     "&:before": {

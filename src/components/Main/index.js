@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { css } from "emotion";
 import Email from "../Email";
 import Box from "../Box";
+import mq from "../../util/mq";
 
 const mainStyles = css({
   padding: 30,
@@ -10,6 +11,9 @@ const mainStyles = css({
 });
 
 const header = css({
+  ...mq.medium({
+    top: 62,
+  }),
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
