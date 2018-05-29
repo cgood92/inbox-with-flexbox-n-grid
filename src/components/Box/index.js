@@ -27,11 +27,9 @@ const Box = ({
 }) => {
   const styles = [
     "box",
-    // Default border color if not specified
-    !black && !gray && !noBorder && "gray-outline",
-    // Put on outlines if wanted
+    // Default border color: gray
+    ((!black && !noBorder) || gray) && "gray-outline",
     black && "black-outline",
-    gray && "gray-outline",
     thick && "thick",
   ]
     // Pull out falses

@@ -1,15 +1,8 @@
 import React from "react";
 import { css } from "emotion";
-import lorem from "lorem-ipsum";
 import faker from "faker";
 import Avatar from "../avatar";
-
-const getFromConfig = () => ({
-  count: 1,
-  units: "sentences",
-  sentenceLowerBound: 2,
-  sentenceUpperBound: 3,
-});
+import { getLorem } from "../../util/common";
 
 const tileStyles = css({
   display: "flex",
@@ -20,12 +13,16 @@ const tileStyles = css({
   },
 });
 
+const small = css({
+  fontSize: 10,
+});
+
 const Tile = () => (
   <div className={tileStyles}>
     <Avatar />
     <section>
       <div>{faker.name.firstName()}</div>
-      <div className={css({ fontSize: 10 })}>{lorem(getFromConfig())}</div>
+      <div className={small}>{getLorem(2, 3)}</div>
     </section>
   </div>
 );

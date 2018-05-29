@@ -16,6 +16,7 @@ const headerStyles = css({
   zIndex: 100,
   backgroundColor: "#4285f4",
   padding: "0 16px 0 8px",
+  color: "white",
 });
 
 const searchContainerStyles = css({
@@ -32,15 +33,15 @@ const searchContainerStyles = css({
 });
 
 const searchStyles = css({
-  maxWidth: 800,
   display: "flex",
   alignItems: "center",
   background: "rgba(255,255,255,.25)",
   color: "white !important",
+  maxWidth: 800,
 });
 
 const Header = () => (
-  <header className={classnames("blue", headerStyles)}>
+  <header className={classnames(headerStyles)}>
     <Icon>menu</Icon>
     <span>Inbox</span>
     <Box height={60} className={searchContainerStyles} noBorder>
@@ -52,7 +53,6 @@ const Header = () => (
           }}
           placeholder="Search"
           fullWidth
-          disableUnderline
           margin="normal"
         />
       </Box>

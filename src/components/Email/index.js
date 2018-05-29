@@ -1,9 +1,8 @@
 import React from "react";
 import { css } from "emotion";
-import lorem from "lorem-ipsum";
 import Avatar from "../avatar";
-import Icon from "@material-ui/core/Icon";
 import Box from "../Box";
+import { getLorem } from "../../util/common";
 
 const emailStyles = css({
   backgroundColor: "white",
@@ -26,25 +25,11 @@ const emailStyles = css({
   },
 });
 
-const getFromConfig = () => ({
-  count: 1,
-  units: "sentences",
-  sentenceLowerBound: 2,
-  sentenceUpperBound: 3,
-});
-
-const getPreviewConfig = () => ({
-  count: 1,
-  units: "sentences",
-  sentenceLowerBound: 7,
-  sentenceUpperBound: 22,
-});
-
 const Email = () => (
   <Box className={emailStyles} tile black height="auto">
     <Avatar />
-    <span className="from">{lorem(getFromConfig())}</span>
-    <span className="preview">{lorem(getPreviewConfig())}</span>
+    <span className="from">{getLorem(2, 3)}</span>
+    <span className="preview">{getLorem(7, 22)}</span>
   </Box>
 );
 

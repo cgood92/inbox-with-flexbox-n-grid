@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { css } from "emotion";
 import Icon from "@material-ui/core/Icon";
 import Box from "../Box";
@@ -10,16 +10,20 @@ const leftStyles = css({
   },
 });
 
+const blue = css({ color: "#29B6F6" });
+const orange = css({ color: "#FFB74D" });
+const green = css({ color: "#4CAF50" });
+
 const LeftSidebar = () => (
   <aside className={leftStyles}>
     <Box tile noBorder>
-      <Icon className={css({ color: "#29B6F6" })}>inbox</Icon>Inbox
+      <Icon className={blue}>inbox</Icon>Inbox
     </Box>
     <Box tile noBorder>
-      <Icon className={css({ color: "#FFB74D" })}>access_time</Icon>Snoozed
+      <Icon className={orange}>access_time</Icon>Snoozed
     </Box>
     <Box tile noBorder>
-      <Icon className={css({ color: "#4CAF50" })}>done</Icon>Done
+      <Icon className={green}>done</Icon>Done
     </Box>
     <hr />
     <Box tile noBorder>

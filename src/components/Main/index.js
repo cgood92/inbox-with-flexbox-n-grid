@@ -1,8 +1,11 @@
 import React, { Fragment } from "react";
 import { css } from "emotion";
-import Icon from "@material-ui/core/Icon";
+import DayHeader from "./day-header";
 import Email from "../Email";
-import mq from "../../util/mq";
+
+const SECTIONS = 3;
+const EMAILS = 10;
+const dates = ["Today", "Yesterday", "Last Week"];
 
 const mainStyles = css({
   padding: 30,
@@ -10,34 +13,15 @@ const mainStyles = css({
   minWidth: 0,
 });
 
-const header = css({
-  ...mq.medium({
-    top: 62,
-  }),
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "8px 16px",
-  position: "sticky",
-  zIndex: 10,
-  top: 102,
-  backgroundColor: "white",
-});
-
-const dates = ["Today", "Yesterday", "Last Week"];
-
-const MainSidebar = () => (
+const Main = () => (
   <main className={mainStyles}>
-    {new Array(3).fill(0).map((e, i) => (
-      <Fragment>
-        <div className={header}>
-          <span>{dates[i]}</span>
-          <Icon>done_all</Icon>
-        </div>
-        {new Array(7).fill(0).map((e, ii) => <Email key={`${i}${ii}`} />)}
+    {new Array(SECTIONS).fill(0).map((e, i) => (
+      <Fragment key={i}>
+        <DayHeader date={dates[i]} />
+        {new Array(EMAILS).fill(0).map((e, ii) => <Email key={`${i}${ii}`} />)}
       </Fragment>
     ))}
   </main>
 );
 
-export default MainSidebar;
+export default Main;
