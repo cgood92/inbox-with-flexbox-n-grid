@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import Icon from "@material-ui/core/Icon";
+import Box from "../Box";
 import mq from "../../util/mq";
 
 const header = css({
@@ -9,8 +9,8 @@ const header = css({
   alignItems: "center",
   padding: "8px 16px",
   position: "sticky",
-  zIndex: 10,
   top: 102,
+  zIndex: 10,
   backgroundColor: "white",
   ...mq.medium({
     top: 62,
@@ -20,7 +20,7 @@ const header = css({
 const DayHeader = ({ date }) => (
   <div className={header}>
     <span>{date}</span>
-    <Icon>done_all</Icon>
+    <Box icon black />
   </div>
 );
 
