@@ -1,10 +1,5 @@
 import React from "react";
-import Tile from "./tile";
 
-const TILES = 30;
-
-const RightSidebar = () => (
-  <aside>{new Array(TILES).fill(0).map((e, i) => <Tile key={i} />)}</aside>
-);
+const RightSidebar = () => <aside>Right Sidebar</aside>;
 
 export default RightSidebar;
