@@ -1,7 +1,7 @@
 import React from "react";
-import Box from "../Box";
 import { css } from "emotion";
 import faker from "faker";
+import Avatar from "../avatar";
 import { getLorem } from "../../util/common";
 
 const tileStyles = css({
@@ -19,7 +19,7 @@ const small = css({
 
 const Tile = () => (
   <div className={tileStyles}>
-    <Box icon black />
+    <Avatar />
     <section>
       <div>{faker.name.firstName()}</div>
       <div className={small}>{getLorem(2, 3)}</div>

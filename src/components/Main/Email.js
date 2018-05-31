@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import Box from "../Box";
+import Avatar from "../avatar";
 import { getLorem } from "../../util/common";
 
 const emailStyles = css({
@@ -24,7 +25,7 @@ const emailStyles = css({
 
 const Email = () => (
   <Box className={emailStyles} tile black height="auto">
-    <Box icon black />
+    <Avatar />
     <span className="from">{getLorem(2, 3)}</span>
     <span className="preview">{getLorem(7, 22)}</span>
   </Box>

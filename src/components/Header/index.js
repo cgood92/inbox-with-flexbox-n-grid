@@ -1,5 +1,9 @@
 import React from "react";
 import { css } from "emotion";
+import Icon from "@material-ui/core/Icon";
+import TextField from "@material-ui/core/TextField";
+import Avatar from "../avatar";
+import Switch from "@material-ui/core/Switch";
 import Box from "../Box";
 import mq from "../../util/mq";
 
@@ -35,21 +39,26 @@ const searchStyles = css({
 
 const Header = () => (
   <header className={headerStyles}>
-    <Box icon black />
-    <Box icon black>
-      Inbox
-    </Box>
+    <Icon>menu</Icon>
+    <span>Inbox</span>
     <Box height={60} className={searchContainerStyles} noBorder>
       <Box black width="100%" className={searchStyles} height={50}>
-        <Box icon black className={css({ marginRight: 20 })} />
-        Search
+        <Icon className={css({ marginRight: 20 })}>search</Icon>
+        <TextField
+          InputLabelProps={{
+            shrink: true,
+          }}
+          placeholder="Search"
+          fullWidth
+          margin="normal"
+        />
       </Box>
-      <Box icon black />
+      <Switch checked color="primary" />
     </Box>
-    <Box icon black className={css({ marginLeft: "auto" })} />
-    <Box icon black />
-    <Box icon black />
-    <Box icon black />
+    <Icon className={css({ marginLeft: "auto" })}>chat</Icon>
+    <Icon>grid_on</Icon>
+    <Icon>notifications</Icon>
+    <Avatar />
   </header>
 );
 
