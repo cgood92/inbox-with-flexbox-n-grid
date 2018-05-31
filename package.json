@@ -1,6 +1,8 @@
 {
-  "name": "flexbox",
-  "version": "0.1.0",
+  "name": "inbox-with-flexbox-n-grid",
+  "version": "1.0.0",
+  "description":
+    "This repo is designed to teach others the process that I used to try to model Google Inbox using flexbox/grid",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.0.0",
