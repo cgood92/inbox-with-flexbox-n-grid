@@ -14,8 +14,8 @@ const blue = css({ color: "#29B6F6" });
 const orange = css({ color: "#FFB74D" });
 const green = css({ color: "#4CAF50" });
 
-const LeftSidebar = () => (
-  <aside className={leftStyles}>
+const LeftSidebar = props => (
+  <aside className={leftStyles} {...props}>
     <Box tile noBorder>
       <Icon className={blue}>inbox</Icon>Inbox
     </Box>

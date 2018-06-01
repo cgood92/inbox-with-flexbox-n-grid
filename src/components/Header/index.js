@@ -37,9 +37,9 @@ const searchStyles = css({
   alignItems: "center",
 });
 
-const Header = () => (
+const Header = ({ toggle }) => (
   <header className={headerStyles}>
-    <Icon>menu</Icon>
+    <Icon onClick={toggle("Left")}>menu</Icon>
     <span>Inbox</span>
     <Box height={60} className={searchContainerStyles} noBorder>
       <Box black width="100%" className={searchStyles} height={50}>
@@ -56,7 +56,7 @@ const Header = () => (
       <Switch checked color="primary" />
     </Box>
     <Icon className={css({ marginLeft: "auto" })}>chat</Icon>
-    <Icon>grid_on</Icon>
+    <Icon onClick={toggle("Right")}>grid_on</Icon>
     <Icon>notifications</Icon>
     <Avatar />
   </header>

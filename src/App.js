@@ -45,13 +45,23 @@ const appStyles = css({
 });
 
 class App extends Component {
+  state = {
+    showLeft: true,
+    showRight: true,
+  };
+  toggle = dir => () => {
+    this.setState({
+      [`show${dir}`]: !this.state[`show${dir}`],
+    });
+  };
   render() {
+    const { showLeft, showRight } = this.state;
     return (
       <div className={appStyles}>
-        <Header />
-        <LeftSidebar />
+        <Header toggle={this.toggle} />
+        <LeftSidebar hidden={!showLeft} />
         <Main />
-        <RightSidebar />
+        <RightSidebar hidden={!showRight} />
       </div>
     );
   }
